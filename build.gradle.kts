@@ -45,9 +45,14 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
+val testSourceSet = sourceSets["test"]
+
 tasks.register<Test>("unitTest") {
     description = "Runs the unit tests."
     group = "verification"
+
+    testClassesDirs = testSourceSet.output.classesDirs
+    classpath = testSourceSet.runtimeClasspath
 
     filter {
         excludeTestsMatching("*FunctionalTest")
@@ -57,6 +62,9 @@ tasks.register<Test>("unitTest") {
 tasks.register<Test>("functionalTest") {
     description = "Runs the functional tests."
     group = "verification"
+
+    testClassesDirs = testSourceSet.output.classesDirs
+    classpath = testSourceSet.runtimeClasspath
 
     filter {
         includeTestsMatching("*FunctionalTest")
