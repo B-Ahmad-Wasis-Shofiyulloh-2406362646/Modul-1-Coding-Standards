@@ -14,12 +14,19 @@ Melakukan duplikasi terhadap setup functional test yang sudah digunakan melangga
 <details>
 <summary>Modul 2 - Reflection</summary>
 Daftar code quality issues yang saya perbaiki
+
 1. Penggunaan Field Injection menggunakan @AutoWired di ProductController dan ProductServiceImpl telah saya refactor menjadi menggunakan konstruktor.
+
 2. Tidak adanya Assertion pada beberapa test yang ada telah saya ubah dengan menambahkan assertDoesNotThrow().
+
 3. Deklarasi throw exception yang tidak diperlukan pada functional test telah saya hapus.
+
 4. Public modifier yang tidak diperlukan pada test yang ada telah saya hapus. 
+
 5. Kumpulan dependency pada build gradle telah saya rapikan dengan mengelompokkannya berdasarkan konfigurasi.
+
 6. Penggunaan anchor tag (<a>) pada tombol yang mengubah data (delete) telah saya ubah menjadi button di dalam form dengan metode POST.
+
 
 Ya, saya cukup yakin bahwa implementasi yang saya terapkan sudah memenuhi definisi CI dan CD. Untuk CI, setiap kali saya melakukan push kode ke repositori GitHub, beberapa workflow telah berjalan secara otomatis untuk membangun projek, menjalankan unit test dan functional test, serta menganalasis masalah kualitas dari kode yang ada melalui SonarCloud. Implementasi ini memastikan semua perubahan telah menjalani testing yang cukup dan tidak merusak fungsionalitas yang sudah ada.
 
